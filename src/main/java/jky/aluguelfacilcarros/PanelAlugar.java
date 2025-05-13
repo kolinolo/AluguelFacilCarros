@@ -54,6 +54,8 @@ public class PanelAlugar extends JFrame {
         setTitle("Aluguel Facil Carros");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(800, 600);
+        setLocationRelativeTo(null);
+        setAlwaysOnTop(true);
         String listas[] = {"Subaru muito pica","C3","Robt CL"};
 
         list1.setListData(listas);

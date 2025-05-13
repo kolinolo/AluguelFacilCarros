@@ -59,6 +59,33 @@ public class ConexaoDB {
 
     }
 
+    public void add(){
+        // Versão Teste da Função Adicionar
+
+        try(Statement stmt = this.connection.createStatement()){
+
+            stmt.executeUpdate("INSERT INTO CARROS values ('629G1au','Subaru Muito PICa','13-05-2024',25525,155)");
+
+        }catch (SQLException e){
+            System.out.println(e.getMessage());;
+        }
+
+    }
+
+    public int listar(){
+        try(Statement stmt = this.connection.createStatement()) {
+            var linhas = stmt.executeQuery("SELECT * FROM CARROS");
+
+            while (linhas.next()) {
+                return linhas.getInt("modelo");
+            }
+
+        }catch (SQLException e){
+            System.out.println(e.getMessage());;
+        }
+        return 0;
+    }
+
 
     public void resetarDB(){
 
