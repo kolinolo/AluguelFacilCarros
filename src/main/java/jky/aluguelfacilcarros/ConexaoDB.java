@@ -5,6 +5,8 @@ import java.sql.Connection; // OBJ da conexão
 import java.sql.DriverManager; // operações SQL
 import java.sql.SQLException; // exceptions do SQLite
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class ConexaoDB {
@@ -64,7 +66,7 @@ public class ConexaoDB {
 
         try(Statement stmt = this.connection.createStatement()){
 
-            stmt.executeUpdate("INSERT INTO CARROS values ('629G1au','Subaru Muito PICa','13-05-2024',25525,155)");
+            stmt.executeUpdate("INSERT INTO CARROS values ('6035','Navio do Roberto Carlos','13-01-2023',25256,15)");
 
         }catch (SQLException e){
             System.out.println(e.getMessage());;
@@ -72,18 +74,17 @@ public class ConexaoDB {
 
     }
 
-    public int listar(){
-        try(Statement stmt = this.connection.createStatement()) {
-            var linhas = stmt.executeQuery("SELECT * FROM CARROS");
-
-            while (linhas.next()) {
-                return linhas.getInt("modelo");
+    public List<String> Select(){
+        List<String> carModels = new ArrayList<>();
+        try(Statement stmt = this.connection.createStatement()){
+            var res = stmt.executeQuery("SELECT * FROM CARROS");
+            while (res.next()){
+                carModels.add(res.getString("modelo"));
             }
-
         }catch (SQLException e){
             System.out.println(e.getMessage());;
         }
-        return 0;
+        return carModels;
     }
 
 

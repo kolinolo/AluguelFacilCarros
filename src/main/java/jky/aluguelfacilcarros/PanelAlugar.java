@@ -4,6 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
 
 public class PanelAlugar extends JFrame {
     private JPanel AlugarForm;
@@ -56,9 +59,21 @@ public class PanelAlugar extends JFrame {
         setSize(800, 600);
         setLocationRelativeTo(null);
         setAlwaysOnTop(true);
-        String listas[] = {"Subaru muito pica","C3","Robt CL"};
+        // Criação de uma lista dinâmica
+        ArrayList<String> list = new ArrayList<>();
 
-        list1.setListData(listas);
+        ConexaoDB con = new ConexaoDB(); // inicia o OBJ de conexão com o DB
+
+        // Adicionando itens à lista
+        for (int i = 0; i < con.Select().size(); i++){
+            list.add(con.Select().get(i));
+        }
+
+        // Convertendo a lista para um array
+        String[] lista = new String[list.size()];
+        lista = list.toArray(lista);
+
+        list1.setListData(lista);
 
         Header();
         setVisible(true);
