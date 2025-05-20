@@ -74,12 +74,12 @@ public class ConexaoDB {
 
     }
 
-    public List<String> Select(){
+    public List<String> Select(String modelo){
         List<String> carModels = new ArrayList<>();
         try(Statement stmt = this.connection.createStatement()){
-            var res = stmt.executeQuery("SELECT * FROM CARROS");
+            var res = stmt.executeQuery(String.format("SELECT %s FROM CARROS",modelo));
             while (res.next()){
-                carModels.add(res.getString("modelo"));
+                carModels.add(res.getString(modelo));
             }
         }catch (SQLException e){
             System.out.println(e.getMessage());;
