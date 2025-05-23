@@ -7,6 +7,10 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 
+import java.sql.*;
+
+
+
 public class PanelAlugar extends JFrame {
     private JPanel AlugarForm;
     // Header
@@ -114,10 +118,10 @@ public class PanelAlugar extends JFrame {
         Header(LinkUserAdd);
 
         // Input Modificar
-        Input_Padronizado(placaTextField,"Placa do Carro:");
-        Input_Padronizado(modeloTextField,"Modelo do Carro:");
-        Input_Padronizado(corDeCarroTextField,"Cor do Carro:");
-        Input_Padronizado(dataDaCriaçãoTextField,"Data do Carro:");
+        Input_Padronizado(placaTextField,"Placa:");
+        Input_Padronizado(modeloTextField,"Modelo:");
+        Input_Padronizado(corDeCarroTextField,"Cor:");
+        Input_Padronizado(dataDaCriaçãoTextField,"Ano do carro:");
         Input_Padronizado(preçoDaDiáriaTextField,"Preço da Diária do Carro:");
 
         // Image do AddUser
@@ -126,6 +130,10 @@ public class PanelAlugar extends JFrame {
 
         adicionarCarroButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                ConexaoDB con = new ConexaoDB();
+                addCarro(placaTextField.getText(),modeloTextField.getText(),dataDaCriaçãoTextField.getText(),corDeCarroTextField.getText(),preçoDaDiáriaTextField.getText())
+
+
                 messageAlert("Carro adicionado com sucesso!","Carro adicionado");
             }
         });
@@ -152,7 +160,15 @@ public class PanelAlugar extends JFrame {
     }
 
     public static void main(String[] args) {
-        new PanelAlugar("Aluguel Facil Carros",1500,750);
+
+        ConexaoDB con = new ConexaoDB(); // inicia o OBJ de conexão com o DB
+
+        con.resetarDB();
+        con.closeConnection();
+
+        new PanelAlugar("Aluguel Facil Carros",1920,1080);
+
+
     }
 
 }

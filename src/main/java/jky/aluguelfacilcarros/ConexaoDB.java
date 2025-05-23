@@ -61,12 +61,12 @@ public class ConexaoDB {
 
     }
 
-    public void add(){
+    public void addCarro(String placa,String modelo, int anoFabricacao, int cor, Float preco){
         // Versão Teste da Função Adicionar
 
         try(Statement stmt = this.connection.createStatement()){
 
-            stmt.executeUpdate("INSERT INTO CARROS values ('6035','Navio do Roberto Carlos','13-01-2023',25256,15)");
+            stmt.executeUpdate("INSERT INTO CARROS values ( " + placa + "," + modelo + "," + anoFabricacao + "," +cor + "," + preco + ")");
 
         }catch (SQLException e){
             System.out.println(e.getMessage());;
@@ -109,38 +109,11 @@ public class ConexaoDB {
             }
 
 
-            stmt.executeUpdate("DROP TABLE IF EXISTS Modelos;");
+
             stmt.executeUpdate("DROP TABLE IF EXISTS CoresCarros;");
             stmt.executeUpdate("DROP TABLE IF EXISTS Aluguel;");
             stmt.executeUpdate("DROP TABLE IF EXISTS Carros;");
             stmt.executeUpdate("DROP TABLE IF EXISTS Cliente;");
-
-            stmt.executeUpdate(// Modelos
-                    "CREATE TABLE Modelos (" +
-                    "ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    "nome TEXT NOT NULL," +
-                    "autonomia REAL NOT NULL)"
-            );
-
-            stmt.executeUpdate( "INSERT INTO Modelos (nome, autonomia) VALUES" +
-                                    " ('celta', 10.00)," +
-                                    " ('Palio', 11.50)," +
-                                    " ('HB20', 15.35)");
-
-
-
-            stmt.executeUpdate(// Cores dos carros
-                    "CREATE TABLE CoresCarros (" +
-                    "ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    "nome TEXT NOT NULL)"
-            );
-
-            stmt.executeUpdate( "INSERT INTO CoresCarros (nome) VALUES" +
-                    " ('cinza')," +
-                    " ('vermelho')," +
-                    " ('preto'),"+
-                    " ('branco')");
-
 
 
 
@@ -157,11 +130,11 @@ public class ConexaoDB {
             stmt.executeUpdate(
                     "CREATE TABLE Carros (" +
                         "placa TEXT PRIMARY KEY, " +
-                        "modelo INTEGER, " +
+                        "modelo TEXT, " +
                         "fabricacao DATE, " +
-                        "cor_carro INTEGER," +
-                        "precoDIaria REAL," +
-                        "FOREIGN KEY (cor_carro) REFERENCES CoresCarros(nome))"
+                        "cor_carro TEXT," +
+                        "precoDIaria REAL"
+
             );
 
             // Tabela Aluguel
