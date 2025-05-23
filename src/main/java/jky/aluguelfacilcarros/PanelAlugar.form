@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="AlugarForm" layout-manager="GridLayoutManager" row-count="7" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="980" height="893"/>
+      <xy x="20" y="20" width="1348" height="1768"/>
     </constraints>
     <properties>
       <background color="-15265508"/>
@@ -11,7 +11,7 @@
     </properties>
     <border type="none"/>
     <children>
-      <grid id="94aef" binding="rotasAddVeiculos" layout-manager="GridLayoutManager" row-count="6" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="94aef" binding="rotasAddVeiculos" layout-manager="GridLayoutManager" row-count="6" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="20" vgap="50">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
@@ -38,7 +38,7 @@
               <margin top="2" left="9" bottom="2" right="6"/>
               <name value="red"/>
               <selectedTextColor color="-327681"/>
-              <text value="Modelo"/>
+              <text value=""/>
             </properties>
           </component>
           <component id="a6ec3" class="javax.swing.JTextField" binding="corDeCarroTextField" default-binding="true">
@@ -57,7 +57,7 @@
               <margin top="2" left="9" bottom="2" right="6"/>
               <name value="red"/>
               <selectedTextColor color="-327681"/>
-              <text value="Cor de Carro"/>
+              <text value=""/>
             </properties>
           </component>
           <component id="89fbc" class="javax.swing.JTextField" binding="dataDaCriaçãoTextField" default-binding="true">
@@ -76,7 +76,7 @@
               <margin top="2" left="9" bottom="2" right="6"/>
               <name value="red"/>
               <selectedTextColor color="-327681"/>
-              <text value="data da Criação"/>
+              <text value=""/>
             </properties>
           </component>
           <component id="3e093" class="javax.swing.JTextField" binding="preçoDaDiáriaTextField" default-binding="true">
@@ -95,7 +95,7 @@
               <margin top="2" left="9" bottom="2" right="6"/>
               <name value="red"/>
               <selectedTextColor color="-327681"/>
-              <text value="Preço da Diária"/>
+              <text value=""/>
             </properties>
           </component>
           <hspacer id="bfee5">
@@ -133,7 +133,7 @@
           <component id="af1c3" class="javax.swing.JButton" binding="adicionarCarroButton" default-binding="true">
             <constraints>
               <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
-                <preferred-size width="50" height="50"/>
+                <preferred-size width="100" height="50"/>
               </grid>
             </constraints>
             <properties>
@@ -147,17 +147,18 @@
               <margin top="0" left="0" bottom="0" right="0"/>
               <text value="Adicionar Carro"/>
               <verticalAlignment value="0"/>
-              <verticalTextPosition value="3"/>
+              <verticalTextPosition value="0"/>
             </properties>
           </component>
         </children>
       </grid>
-      <grid id="41b75" binding="rotasAddUser" layout-manager="GridLayoutManager" row-count="5" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="41b75" binding="rotasAddUser" layout-manager="GridLayoutManager" row-count="5" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="50">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <autoscrolls value="true"/>
           <background color="-15265508"/>
         </properties>
         <border type="none"/>
@@ -235,7 +236,7 @@
           <component id="5b28c" class="javax.swing.JLabel" binding="UserIco">
             <constraints>
               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
-                <preferred-size width="20" height="20"/>
+                <preferred-size width="50" height="50"/>
               </grid>
             </constraints>
             <properties>
@@ -243,6 +244,8 @@
               <horizontalAlignment value="0"/>
               <horizontalTextPosition value="0"/>
               <text value=""/>
+              <verticalAlignment value="1"/>
+              <verticalTextPosition value="1"/>
             </properties>
           </component>
         </children>
@@ -262,7 +265,7 @@
         </properties>
         <border type="none"/>
         <children>
-          <component id="f2de8" class="javax.swing.JButton" binding="GetVeiculosBtn">
+          <component id="f2de8" class="javax.swing.JButton" binding="LinkGetVeiculo">
             <constraints>
               <grid row="0" column="3" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -273,12 +276,13 @@
               <defaultCapable value="true"/>
               <enabled value="true"/>
               <focusPainted value="false"/>
+              <font size="18" style="3"/>
               <foreground color="-1"/>
               <hideActionText value="false"/>
               <text value="Lista de Veiculos"/>
             </properties>
           </component>
-          <component id="9fbd6" class="javax.swing.JButton" binding="AddUSerBtn">
+          <component id="9fbd6" class="javax.swing.JButton" binding="LinkUserAdd">
             <constraints>
               <grid row="0" column="2" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -289,13 +293,14 @@
               <defaultCapable value="true"/>
               <enabled value="true"/>
               <focusPainted value="false"/>
+              <font size="18" style="3"/>
               <foreground color="-1"/>
               <hideActionText value="false"/>
               <margin top="0" left="0" bottom="0" right="0"/>
               <text value="Adicionar User"/>
             </properties>
           </component>
-          <component id="52c0d" class="javax.swing.JButton" binding="AddVeiculosBtn">
+          <component id="52c0d" class="javax.swing.JButton" binding="LinkAddVeiculo">
             <constraints>
               <grid row="0" column="1" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -306,6 +311,7 @@
               <defaultCapable value="true"/>
               <enabled value="true"/>
               <focusPainted value="false"/>
+              <font size="18" style="3"/>
               <foreground color="-1"/>
               <hideActionText value="false"/>
               <text value="Adicionar Veiculos"/>
@@ -321,14 +327,14 @@
           </hspacer>
           <component id="26bde" class="javax.swing.JLabel">
             <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="2" use-parent-layout="false"/>
             </constraints>
             <properties>
               <alignmentX value="1.0"/>
               <autoscrolls value="false"/>
               <doubleBuffered value="false"/>
               <focusCycleRoot value="true"/>
-              <font name="Source Code Pro" size="36" style="3"/>
+              <font name="Source Code Pro" size="48" style="3"/>
               <foreground color="-7859180"/>
               <opaque value="false"/>
               <text value="🚗 AlugFacil"/>
@@ -338,80 +344,130 @@
           </component>
         </children>
       </grid>
-      <grid id="3ba1b" binding="rotasGetVeiculos" layout-manager="GridLayoutManager" row-count="4" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="3ba1b" binding="rotasGetVeiculos" layout-manager="GridLayoutManager" row-count="4" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-15265508"/>
         </properties>
         <border type="none"/>
         <children>
-          <component id="fe32b" class="javax.swing.JList" binding="list1" default-binding="true">
-            <constraints>
-              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="150" height="50"/>
-              </grid>
-            </constraints>
-            <properties>
-              <background color="-15265508"/>
-              <foreground color="-1"/>
-              <model/>
-            </properties>
-          </component>
           <hspacer id="d9b2c">
             <constraints>
-              <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="2" column="5" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
           </hspacer>
-          <component id="78b0f" class="javax.swing.JLabel">
-            <constraints>
-              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <foreground color="-1"/>
-              <text value="LISTA de Veiculos"/>
-            </properties>
-          </component>
-          <component id="b8165" class="javax.swing.JButton" binding="removerButton" default-binding="true">
-            <constraints>
-              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <text value="Remover"/>
-            </properties>
-          </component>
-          <component id="c1896" class="javax.swing.JButton" binding="ALUGARButton" default-binding="true">
-            <constraints>
-              <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <text value="ALUGAR"/>
-            </properties>
-          </component>
-          <component id="a915b" class="javax.swing.JButton" binding="devolverButton" default-binding="true">
-            <constraints>
-              <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <text value="Devolver"/>
-            </properties>
-          </component>
           <component id="7c405" class="javax.swing.JComboBox" binding="comboBox1" default-binding="true">
             <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties/>
           </component>
+          <component id="fe32b" class="javax.swing.JList" binding="list1" default-binding="true">
+            <constraints>
+              <grid row="2" column="2" row-span="1" col-span="2" vsize-policy="6" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="1000" height="500"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-15463888"/>
+              <fixedCellHeight value="20"/>
+              <fixedCellWidth value="20"/>
+              <foreground color="-1"/>
+              <layoutOrientation value="0"/>
+              <model/>
+            </properties>
+          </component>
+          <component id="78b0f" class="javax.swing.JLabel" binding="listVeiculo">
+            <constraints>
+              <grid row="1" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <focusable value="true"/>
+              <font size="28" style="1"/>
+              <foreground color="-1"/>
+              <text value="Lista de Veiculos"/>
+            </properties>
+          </component>
           <component id="55d0c" class="javax.swing.JButton" binding="FILTRARButton" default-binding="true">
             <constraints>
-              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="FILTRAR"/>
             </properties>
           </component>
+          <grid id="62075" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-15265508"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="c1896" class="javax.swing.JButton" binding="ALUGARButton" default-binding="true">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <autoscrolls value="false"/>
+                  <background color="-14276791"/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="true"/>
+                  <defaultCapable value="true"/>
+                  <enabled value="true"/>
+                  <focusPainted value="true"/>
+                  <focusable value="false"/>
+                  <foreground color="-394241"/>
+                  <horizontalTextPosition value="0"/>
+                  <opaque value="true"/>
+                  <text value="ALUGAR"/>
+                </properties>
+              </component>
+              <component id="b8165" class="javax.swing.JButton" binding="removerButton" default-binding="true">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <autoscrolls value="false"/>
+                  <background color="-14276791"/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="true"/>
+                  <defaultCapable value="true"/>
+                  <enabled value="true"/>
+                  <focusPainted value="true"/>
+                  <focusable value="false"/>
+                  <foreground color="-394241"/>
+                  <horizontalTextPosition value="0"/>
+                  <opaque value="true"/>
+                  <text value="Remover"/>
+                </properties>
+              </component>
+              <component id="a915b" class="javax.swing.JButton" binding="devolverButton" default-binding="true">
+                <constraints>
+                  <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <autoscrolls value="false"/>
+                  <background color="-14276791"/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="true"/>
+                  <defaultCapable value="true"/>
+                  <enabled value="true"/>
+                  <focusPainted value="true"/>
+                  <focusable value="false"/>
+                  <foreground color="-394241"/>
+                  <horizontalTextPosition value="0"/>
+                  <opaque value="true"/>
+                  <text value="Devolver"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
         </children>
       </grid>
       <vspacer id="8c212">
