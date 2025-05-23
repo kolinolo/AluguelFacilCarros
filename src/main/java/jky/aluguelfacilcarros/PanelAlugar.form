@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="AlugarForm" layout-manager="GridLayoutManager" row-count="7" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="980" height="749"/>
+      <xy x="20" y="20" width="980" height="893"/>
     </constraints>
     <properties>
       <background color="-15265508"/>
@@ -14,7 +14,7 @@
       <grid id="94aef" binding="rotasAddVeiculos" layout-manager="GridLayoutManager" row-count="6" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-15265508"/>
@@ -22,63 +22,79 @@
         </properties>
         <border type="none"/>
         <children>
-          <component id="a9ccb" class="javax.swing.JTextField" binding="placaTextField" default-binding="true">
-            <constraints>
-              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="150" height="-1"/>
-              </grid>
-            </constraints>
-            <properties>
-              <background color="-1"/>
-              <foreground color="-15265508"/>
-              <text value="Placa"/>
-            </properties>
-          </component>
           <component id="cc8ff" class="javax.swing.JTextField" binding="modeloTextField" default-binding="true">
             <constraints>
               <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="150" height="-1"/>
+                <preferred-size width="150" height="50"/>
               </grid>
             </constraints>
             <properties>
-              <background color="-1"/>
-              <foreground color="-15265508"/>
+              <alignmentX value="1.0"/>
+              <background color="-2500135"/>
+              <caretColor color="-5459269"/>
+              <disabledTextColor color="-16777216"/>
+              <foreground color="-16777216"/>
+              <horizontalAlignment value="10"/>
+              <margin top="2" left="9" bottom="2" right="6"/>
+              <name value="red"/>
+              <selectedTextColor color="-327681"/>
               <text value="Modelo"/>
             </properties>
           </component>
           <component id="a6ec3" class="javax.swing.JTextField" binding="corDeCarroTextField" default-binding="true">
             <constraints>
               <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="150" height="-1"/>
+                <preferred-size width="150" height="50"/>
               </grid>
             </constraints>
             <properties>
-              <background color="-1"/>
-              <foreground color="-15265508"/>
+              <alignmentX value="1.0"/>
+              <background color="-2500135"/>
+              <caretColor color="-5459269"/>
+              <disabledTextColor color="-16777216"/>
+              <foreground color="-16777216"/>
+              <horizontalAlignment value="10"/>
+              <margin top="2" left="9" bottom="2" right="6"/>
+              <name value="red"/>
+              <selectedTextColor color="-327681"/>
               <text value="Cor de Carro"/>
             </properties>
           </component>
           <component id="89fbc" class="javax.swing.JTextField" binding="dataDaCriaçãoTextField" default-binding="true">
             <constraints>
               <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="150" height="-1"/>
+                <preferred-size width="150" height="50"/>
               </grid>
             </constraints>
             <properties>
-              <background color="-1"/>
-              <foreground color="-15265508"/>
+              <alignmentX value="1.0"/>
+              <background color="-2500135"/>
+              <caretColor color="-5459269"/>
+              <disabledTextColor color="-16777216"/>
+              <foreground color="-16777216"/>
+              <horizontalAlignment value="10"/>
+              <margin top="2" left="9" bottom="2" right="6"/>
+              <name value="red"/>
+              <selectedTextColor color="-327681"/>
               <text value="data da Criação"/>
             </properties>
           </component>
           <component id="3e093" class="javax.swing.JTextField" binding="preçoDaDiáriaTextField" default-binding="true">
             <constraints>
               <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="150" height="-1"/>
+                <preferred-size width="150" height="50"/>
               </grid>
             </constraints>
             <properties>
-              <background color="-1"/>
-              <foreground color="-15265508"/>
+              <alignmentX value="1.0"/>
+              <background color="-2500135"/>
+              <caretColor color="-5459269"/>
+              <disabledTextColor color="-16777216"/>
+              <foreground color="-16777216"/>
+              <horizontalAlignment value="10"/>
+              <margin top="2" left="9" bottom="2" right="6"/>
+              <name value="red"/>
+              <selectedTextColor color="-327681"/>
               <text value="Preço da Diária"/>
             </properties>
           </component>
@@ -92,13 +108,46 @@
               <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
           </hspacer>
-          <component id="af1c3" class="javax.swing.JButton" binding="adicionarCarroButton" default-binding="true">
+          <component id="a9ccb" class="javax.swing.JTextField" binding="placaTextField" default-binding="true">
             <constraints>
-              <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="50"/>
+              </grid>
             </constraints>
             <properties>
-              <background color="-1"/>
+              <alignmentX value="1.0"/>
+              <background color="-2500135"/>
+              <caretColor color="-5459269"/>
+              <disabledTextColor color="-16777216"/>
+              <foreground color="-16777216"/>
+              <horizontalAlignment value="10"/>
+              <margin top="2" left="9" bottom="2" right="6"/>
+              <name value=""/>
+              <selectedTextColor color="-327681"/>
+              <text value=""/>
+            </properties>
+            <clientProperties>
+              <html.disable class="java.lang.Boolean" value="false"/>
+            </clientProperties>
+          </component>
+          <component id="af1c3" class="javax.swing.JButton" binding="adicionarCarroButton" default-binding="true">
+            <constraints>
+              <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="50" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <alignmentY value="1.0"/>
+              <autoscrolls value="false"/>
+              <background color="-16053218"/>
+              <focusable value="false"/>
+              <foreground color="-394241"/>
+              <horizontalAlignment value="0"/>
+              <horizontalTextPosition value="0"/>
+              <margin top="0" left="0" bottom="0" right="0"/>
               <text value="Adicionar Carro"/>
+              <verticalAlignment value="0"/>
+              <verticalTextPosition value="3"/>
             </properties>
           </component>
         </children>
@@ -106,7 +155,7 @@
       <grid id="41b75" binding="rotasAddUser" layout-manager="GridLayoutManager" row-count="5" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-15265508"/>
@@ -116,7 +165,7 @@
           <component id="d1727" class="javax.swing.JTextField" binding="CPFTextField" default-binding="true">
             <constraints>
               <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="250" height="-1"/>
+                <preferred-size width="35" height="35"/>
               </grid>
             </constraints>
             <properties>
@@ -132,7 +181,7 @@
           <component id="d7cc6" class="javax.swing.JTextField" binding="nomeTextField" default-binding="true">
             <constraints>
               <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="150" height="-1"/>
+                <preferred-size width="35" height="35"/>
               </grid>
             </constraints>
             <properties>
@@ -148,7 +197,7 @@
           <component id="606fd" class="javax.swing.JTextField" binding="dataDeNascimentoTextField" default-binding="true">
             <constraints>
               <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="150" height="-1"/>
+                <preferred-size width="35" height="35"/>
               </grid>
             </constraints>
             <properties>
@@ -173,16 +222,21 @@
           </hspacer>
           <component id="4cae7" class="javax.swing.JButton" binding="adicionarUsuárioButton" default-binding="true">
             <constraints>
-              <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="50" height="50"/>
+              </grid>
             </constraints>
             <properties>
-              <background color="-2500135"/>
+              <background color="-16053218"/>
+              <foreground color="-394241"/>
               <text value="Adicionar Usuário"/>
             </properties>
           </component>
           <component id="5b28c" class="javax.swing.JLabel" binding="UserIco">
             <constraints>
-              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="20" height="20"/>
+              </grid>
             </constraints>
             <properties>
               <background color="-14086864"/>
@@ -231,7 +285,7 @@
             <properties>
               <background color="-14342875"/>
               <borderPainted value="false"/>
-              <contentAreaFilled value="true"/>
+              <contentAreaFilled value="false"/>
               <defaultCapable value="true"/>
               <enabled value="true"/>
               <focusPainted value="false"/>
@@ -248,7 +302,7 @@
             <properties>
               <background color="-14342875"/>
               <borderPainted value="false"/>
-              <contentAreaFilled value="true"/>
+              <contentAreaFilled value="false"/>
               <defaultCapable value="true"/>
               <enabled value="true"/>
               <focusPainted value="false"/>

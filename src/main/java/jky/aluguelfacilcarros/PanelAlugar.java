@@ -1,8 +1,10 @@
 package jky.aluguelfacilcarros;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
+import java.awt.*;
+import java.awt.event.*;
 import java.util.ArrayList;
 
 public class PanelAlugar extends JFrame {
@@ -48,7 +50,6 @@ public class PanelAlugar extends JFrame {
         ImageIcon image = new ImageIcon("C:/Users/ronal/OneDrive/Imagens/Programação/Java/AluguelFacilCarros/assets/Desconhecido.jpg");
 
         UserIco.setIcon(image);
-        UserIco.setSize(image.getIconWidth(),image.getIconHeight());
         GetVeiculosBtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 rotasAddVeiculos.setVisible(false);
@@ -66,6 +67,23 @@ public class PanelAlugar extends JFrame {
         });
     }
 
+    public static void PadronInput(JTextField input) {
+        Border border = new LineBorder(Color.white, 1, true);
+        input.setBorder(border);
+
+        if(input.getText().isEmpty()){
+            System.out.println("Vazio");
+        }
+    }
+
+    public void ModificarInputs(){
+        PadronInput(placaTextField);
+        PadronInput(modeloTextField);
+        PadronInput(corDeCarroTextField);
+        PadronInput(dataDaCriaçãoTextField);
+        PadronInput(preçoDaDiáriaTextField);
+    }
+
     public PanelAlugar(){
         setContentPane(AlugarForm);
         setTitle("Aluguel Facil Carros");
@@ -73,6 +91,7 @@ public class PanelAlugar extends JFrame {
         setSize(1200, 800);
         setLocationRelativeTo(null);
         setAlwaysOnTop(true);
+        ModificarInputs();
         // Criação de uma lista dinâmica
         ArrayList<String> list = new ArrayList<>();
 
@@ -83,6 +102,13 @@ public class PanelAlugar extends JFrame {
             list.add(con.Select("modelo").get(i) + " - " + con.Select("placa").get(i));
         }
 
+        comboBox1.addItem("Carro");
+        comboBox1.addItem("Moto");
+        comboBox1.addItem("Barco");
+        comboBox1.addItem("Avião");
+        comboBox1.addItem("Trem");
+        comboBox1.addItem("Bicicleta");
+        comboBox1.addItem("Camelo");
         // Convertendo a lista para um array
         String[] lista = new String[list.size()];
         lista = list.toArray(lista);
@@ -96,4 +122,5 @@ public class PanelAlugar extends JFrame {
     public static void main(String[] args) {
         new PanelAlugar();
     }
+
 }
