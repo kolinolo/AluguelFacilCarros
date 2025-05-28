@@ -1,20 +1,19 @@
 package jky.aluguelfacilcarros;
 
+import jky.aluguelfacilcarros.Tabela;
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
-
-import java.sql.*;
-
 
 
 public class PanelAlugar extends JFrame {
     private JPanel AlugarForm;
     // Header
-    private JList list1;
     private JPanel rotasGetVeiculos;
     private JPanel rotasAddVeiculos;
     private JPanel rotasAddUser;
@@ -27,7 +26,7 @@ public class PanelAlugar extends JFrame {
     private JTextField nomeTextField;
     private JTextField dataDeNascimentoTextField;
     private JButton adicionarUsuárioButton;
-    private JLabel UserIco;
+    private JLabel UserIcon;
     // Adicionar Veiculo
     private JTextField placaTextField;
     private JTextField modeloTextField;
@@ -42,6 +41,8 @@ public class PanelAlugar extends JFrame {
     private JComboBox comboBox1;
     private JButton FILTRARButton;
     private JLabel listVeiculo;
+    private JTable table1;
+
 
     // Função dos Botões do Header
     public void Header(JButton LinkHeader){
@@ -101,6 +102,7 @@ public class PanelAlugar extends JFrame {
     }
 
     public PanelAlugar(String titulo,int width,int height){
+        Tabela tabela = new Tabela();
         setContentPane(AlugarForm);
         setTitle(titulo);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -109,8 +111,6 @@ public class PanelAlugar extends JFrame {
         // A Janela Vai ficar em cima de todas as outras
         setLocationRelativeTo(null);
         setAlwaysOnTop(true);
-        // Criação de uma lista dinâmica
-        ArrayList<String> list = new ArrayList<>();
 
         // Headers
         Header(LinkGetVeiculo);
@@ -125,37 +125,28 @@ public class PanelAlugar extends JFrame {
         Input_Padronizado(preçoDaDiáriaTextField,"Preço da Diária do Carro:");
 
         // Image do AddUser
-        ImageIcon image = new ImageIcon("C:/Users/ronal/OneDrive/Imagens/Programação/Java/AluguelFacilCarros/assets/Desconhecido.jpg");
-        UserIco.setIcon(image);
-
-        adicionarCarroButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                ConexaoDB con = new ConexaoDB();
-                addCarro(placaTextField.getText(),modeloTextField.getText(),dataDaCriaçãoTextField.getText(),corDeCarroTextField.getText(),preçoDaDiáriaTextField.getText())
-
-
-                messageAlert("Carro adicionado com sucesso!","Carro adicionado");
-            }
-        });
-
-        // Sqlite combinado com Java Swing
-        ConexaoDB con = new ConexaoDB(); // inicia o OBJ de conexão com o DB
-
-        // Adicionando itens à lista
-        for (int i = 0; i < con.Select("modelo").size(); i++){
-            list.add(con.Select("modelo").get(i) + " - " + con.Select("placa").get(i));
-        }
-        listVeiculo.setText("Lista de Veiculos Quantidade " + list.size());
-
-        // Convertendo a lista para um array
-        String[] lista = new String[list.size()];
-        lista = list.toArray(lista);
-
-        list1.setListData(lista);
+        ImageIcon image = new ImageIcon(new ImageIcon("C:/Users/ronal/OneDrive/Imagens/Programação/Java/AluguelFacilCarros/assets/desconhecido.jpg")
+                .getImage().getScaledInstance(250, 250, Image.SCALE_FAST));
+        UserIcon.setIcon(image);
 
         comboBox1.addItem("Modelo");
         comboBox1.addItem("Fabricante");
         comboBox1.addItem("Preço do Carro");
+
+//        adicionarCarroButton.addActionListener(new ActionListener() {
+//            public void actionPerformed(ActionEvent e) {
+//                ConexaoDB con = new ConexaoDB();
+//                addCarro(placaTextField.getText(),modeloTextField.getText(),dataDaCriaçãoTextField.getText(),corDeCarroTextField.getText(),preçoDaDiáriaTextField.getText())
+//
+//                messageAlert("Carro adicionado com sucesso!","Carro adicionado");
+//            }
+//        });
+
+        // Table
+
+
+        tabela.Tabela(table1);
+
         setVisible(true);
     }
 
@@ -170,5 +161,4 @@ public class PanelAlugar extends JFrame {
 
 
     }
-
 }
