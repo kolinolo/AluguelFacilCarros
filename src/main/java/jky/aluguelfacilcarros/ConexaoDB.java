@@ -8,6 +8,11 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+
+
 
 public class ConexaoDB {
 
@@ -61,12 +66,34 @@ public class ConexaoDB {
 
     }
 
-    public void addCarro(String placa,String modelo, int anoFabricacao, int cor, Float preco){
+     public void addPessoa(String nome, String cpf, String dataNascimentoSTR) throws SQLException {
+
+         Statement stmt = this.connection.createStatement();
+         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+         LocalDate dataNascimento = LocalDate.parse(dataNascimentoSTR, formatter);
+
+
+         String sql = "INSERT INTO  CLIENTE (nome, CPF, data_nascimento) values ('" + nome + "', '" + cpf + "', '" + dataNascimento + "')";
+         System.out.println(sql);
+         stmt.executeUpdate(sql);
+
+
+
+     };
+
+    public void addCarro(String placa,
+                         String modelo,
+                         int anoFabricacao,
+                         String cor,
+                         Float preco){
+
         // Versão Teste da Função Adicionar
 
         try(Statement stmt = this.connection.createStatement()){
 
-            stmt.executeUpdate("INSERT INTO CARROS values ( " + placa + "," + modelo + "," + anoFabricacao + "," +cor + "," + preco + ")");
+
+            String sql = "INSERT INTO CARROS VALUES ('" + placa + "', '" + modelo + "', " + anoFabricacao + ", '" + cor + "', " + preco + ")";
+            stmt.executeUpdate(sql);
 
         }catch (SQLException e){
             System.out.println(e.getMessage());;
@@ -131,9 +158,9 @@ public class ConexaoDB {
                     "CREATE TABLE Carros (" +
                         "placa TEXT PRIMARY KEY, " +
                         "modelo TEXT, " +
-                        "fabricacao DATE, " +
+                        "fabricacao integer, " +
                         "cor_carro TEXT," +
-                        "precoDIaria REAL"
+                        "precoDIaria REAL)"
 
             );
 
@@ -145,9 +172,7 @@ public class ConexaoDB {
                         "carro_placa TEXT NOT NULL, " +
                         "data_aluguel DATE, " +
                         "data_prazo DATE, " +
-                        "data_devolucao DATE, " +
-                        "FOREIGN KEY (cliente_id) REFERENCES Cliente(ID), " +
-                        "FOREIGN KEY (carro_placa) REFERENCES Carros(placa))");
+                        "data_devolucao DATE)");
 
 
 

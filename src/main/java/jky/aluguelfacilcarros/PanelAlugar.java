@@ -8,6 +8,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import java.awt.*;
 import java.awt.event.*;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 
@@ -133,14 +134,34 @@ public class PanelAlugar extends JFrame {
         comboBox1.addItem("Fabricante");
         comboBox1.addItem("Preço do Carro");
 
-//        adicionarCarroButton.addActionListener(new ActionListener() {
-//            public void actionPerformed(ActionEvent e) {
-//                ConexaoDB con = new ConexaoDB();
-//                addCarro(placaTextField.getText(),modeloTextField.getText(),dataDaCriaçãoTextField.getText(),corDeCarroTextField.getText(),preçoDaDiáriaTextField.getText())
-//
-//                messageAlert("Carro adicionado com sucesso!","Carro adicionado");
-//            }
-//        });
+        adicionarCarroButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                ConexaoDB con = new ConexaoDB();
+                con.addCarro(placaTextField.getText(),
+                        modeloTextField.getText(),
+                        Integer.parseInt(dataDaCriaçãoTextField.getText()),
+                        corDeCarroTextField.getText(),
+                        Float.valueOf(preçoDaDiáriaTextField.getText()));
+
+                messageAlert("Carro adicionado com sucesso!","Carro adicionado");
+            }
+        });
+
+
+        adicionarUsuárioButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                ConexaoDB con = new ConexaoDB();
+                try {
+                    con.addPessoa(nomeTextField.getText(),CPFTextField.getText(),dataDeNascimentoTextField.getText());
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+
+
+
+                messageAlert("Carro adicionado com sucesso!","Carro adicionado");
+            }
+        });
 
         // Table
 

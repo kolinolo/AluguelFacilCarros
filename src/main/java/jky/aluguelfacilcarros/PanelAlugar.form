@@ -176,7 +176,8 @@
               <horizontalAlignment value="10"/>
               <inheritsPopupMenu value="false"/>
               <margin top="2" left="9" bottom="2" right="6"/>
-              <text value="CPF: "/>
+              <text value="CPF:"/>
+              <toolTipText value=""/>
             </properties>
           </component>
           <component id="d7cc6" class="javax.swing.JTextField" binding="nomeTextField" default-binding="true">
@@ -193,6 +194,7 @@
               <inheritsPopupMenu value="false"/>
               <margin top="2" left="9" bottom="2" right="6"/>
               <text value="Nome:"/>
+              <toolTipText value=""/>
             </properties>
           </component>
           <component id="606fd" class="javax.swing.JTextField" binding="dataDeNascimentoTextField" default-binding="true">
@@ -208,7 +210,8 @@
               <horizontalAlignment value="10"/>
               <inheritsPopupMenu value="false"/>
               <margin top="2" left="9" bottom="2" right="6"/>
-              <text value="Data de Nascimento"/>
+              <text value="Data de nascimento:"/>
+              <toolTipText value=""/>
             </properties>
           </component>
           <hspacer id="59a64">
