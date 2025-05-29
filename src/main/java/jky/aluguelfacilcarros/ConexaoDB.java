@@ -87,6 +87,7 @@ public class ConexaoDB {
                          String cor,
                          Float preco){
 
+
         // Versão Teste da Função Adicionar
 
         try(Statement stmt = this.connection.createStatement()){
@@ -99,7 +100,58 @@ public class ConexaoDB {
             System.out.println(e.getMessage());;
         }
 
+
+
+
+
+
     }
+
+    public void alugaCarro(int ID, String placa, int dias) throws SQLException {
+
+        Statement stmt = this.connection.createStatement();
+
+        String sql = "SELECT 1 FROM aluguel WHERE carro_placa = '" + placa + "' and data_devolucao is null LIMIT 1";
+        System.out.println(sql);
+        ResultSet rs = stmt.executeQuery(sql);
+
+        if (rs.next()) {
+            System.out.println("Placa já alugada!");
+
+
+
+        } else {
+            System.out.println("Placa disponível.");
+
+            System.out.println(sql);
+            sql = "INSERT INTO Aluguel (cliente_id, carro_placa, data_prazo, data_aluguel, data_devolucao) VALUES (" + ID + ",' " + placa + "',date('now', '" + dias + "days')," + "date('now'), NULL)";
+
+            System.out.println(sql);
+
+            stmt.executeUpdate(sql);
+
+
+        }
+
+
+
+
+
+
+    }
+
+    public boolean devolverCarro(String placa) throws SQLException {
+
+        Statement stmt = this.connection.createStatement();
+
+        String sql = "update Aluguel set data_devolucao = date('now') where" + placa + "= 'lol';";
+        System.out.println(sql);
+        stmt.executeQuery(sql);
+
+
+    return true;
+    };
+
 
     public List<String> Select(String modelo){
         List<String> carModels = new ArrayList<>();
