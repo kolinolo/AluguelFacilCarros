@@ -176,7 +176,7 @@
               <horizontalAlignment value="10"/>
               <inheritsPopupMenu value="false"/>
               <margin top="2" left="9" bottom="2" right="6"/>
-              <text value="CPF:"/>
+              <text value=""/>
               <toolTipText value=""/>
             </properties>
           </component>
@@ -193,7 +193,7 @@
               <horizontalAlignment value="10"/>
               <inheritsPopupMenu value="false"/>
               <margin top="2" left="9" bottom="2" right="6"/>
-              <text value="Nome:"/>
+              <text value=""/>
               <toolTipText value=""/>
             </properties>
           </component>
@@ -210,7 +210,7 @@
               <horizontalAlignment value="10"/>
               <inheritsPopupMenu value="false"/>
               <margin top="2" left="9" bottom="2" right="6"/>
-              <text value="Data de nascimento:"/>
+              <text value=""/>
               <toolTipText value=""/>
             </properties>
           </component>
@@ -353,7 +353,7 @@
           </component>
         </children>
       </grid>
-      <grid id="3ba1b" binding="rotasGetVeiculos" layout-manager="GridLayoutManager" row-count="5" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="3ba1b" binding="rotasGetVeiculos" layout-manager="GridLayoutManager" row-count="4" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
@@ -363,28 +363,15 @@
         <properties>
           <background color="-15265508"/>
         </properties>
-        <border type="none"/>
+        <border type="none" title-justification="2" title-position="2">
+          <font/>
+          <title-color color="-2104859"/>
+        </border>
         <children>
-          <hspacer id="d9b2c">
-            <constraints>
-              <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-          </hspacer>
-          <component id="78b0f" class="javax.swing.JLabel" binding="listVeiculo">
-            <constraints>
-              <grid row="1" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <focusable value="true"/>
-              <font size="28" style="1"/>
-              <foreground color="-1"/>
-              <text value="Lista de Veiculos"/>
-            </properties>
-          </component>
           <grid id="62075" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
-              <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+              <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <background color="-15265508"/>
@@ -450,7 +437,7 @@
               </component>
             </children>
           </grid>
-          <component id="7c405" class="javax.swing.JComboBox" binding="comboBox1" default-binding="true">
+          <component id="7c405" class="javax.swing.JComboBox" binding="ComboTabela">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -461,24 +448,39 @@
               <inheritsPopupMenu value="true"/>
             </properties>
           </component>
-          <component id="55d0c" class="javax.swing.JButton" binding="FILTRARButton" default-binding="true">
+          <component id="d3093" class="javax.swing.JTable" binding="Tabela">
             <constraints>
-              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-14276791"/>
-              <foreground color="-327681"/>
-              <horizontalTextPosition value="0"/>
-              <text value="FILTRAR"/>
-            </properties>
-          </component>
-          <component id="d3093" class="javax.swing.JTable" binding="table1" default-binding="true">
-            <constraints>
-              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="250" height="250"/>
+              <grid row="2" column="0" row-span="1" col-span="5" vsize-policy="6" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="500" height="250"/>
               </grid>
             </constraints>
-            <properties/>
+            <properties>
+              <autoCreateColumnsFromModel value="true"/>
+              <autoCreateRowSorter value="false"/>
+              <autoResizeMode value="4"/>
+              <cellSelectionEnabled value="true"/>
+              <enabled value="true"/>
+              <focusable value="false"/>
+              <intercellSpacing width="5" height="5"/>
+              <rowHeight value="20"/>
+              <showHorizontalLines value="true"/>
+              <showVerticalLines value="true"/>
+            </properties>
+            <clientProperties>
+              <JTable.autoStartsEdit class="java.lang.Boolean" value="true"/>
+              <Table.isFileList class="java.lang.Boolean" value="true"/>
+            </clientProperties>
+          </component>
+          <component id="78b0f" class="javax.swing.JLabel" binding="listVeiculo">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <focusable value="true"/>
+              <font size="28" style="1"/>
+              <foreground color="-1"/>
+              <text value="Lista de Veiculos"/>
+            </properties>
           </component>
         </children>
       </grid>

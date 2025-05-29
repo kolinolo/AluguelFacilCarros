@@ -1,15 +1,11 @@
 package jky.aluguelfacilcarros;
 
-import jky.aluguelfacilcarros.Tabela;
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.JTableHeader;
 import java.awt.*;
 import java.awt.event.*;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 
 public class PanelAlugar extends JFrame {
@@ -39,11 +35,9 @@ public class PanelAlugar extends JFrame {
     private JButton removerButton;
     private JButton ALUGARButton;
     private JButton devolverButton;
-    private JComboBox comboBox1;
-    private JButton FILTRARButton;
+    private JComboBox ComboTabela;
     private JLabel listVeiculo;
-    private JTable table1;
-
+    private JTable Tabela;
 
     // Função dos Botões do Header
     public void Header(JButton LinkHeader){
@@ -119,20 +113,21 @@ public class PanelAlugar extends JFrame {
         Header(LinkUserAdd);
 
         // Input Modificar
-        Input_Padronizado(placaTextField,"Placa:");
-        Input_Padronizado(modeloTextField,"Modelo:");
-        Input_Padronizado(corDeCarroTextField,"Cor:");
-        Input_Padronizado(dataDaCriaçãoTextField,"Ano do carro:");
-        Input_Padronizado(preçoDaDiáriaTextField,"Preço da Diária do Carro:");
+        Input_Padronizado(placaTextField," Placa:");
+        Input_Padronizado(modeloTextField," Modelo:");
+        Input_Padronizado(corDeCarroTextField," Cor:");
+        Input_Padronizado(dataDaCriaçãoTextField," Ano do carro:");
+        Input_Padronizado(preçoDaDiáriaTextField," Preço da Diária do Carro:");
+        Input_Padronizado(CPFTextField," CPF:");
+        Input_Padronizado(nomeTextField," Nome do Usuário: ");
+        Input_Padronizado(dataDeNascimentoTextField," Data de Nascimento: ");
 
         // Image do AddUser
         ImageIcon image = new ImageIcon(new ImageIcon("C:/Users/ronal/OneDrive/Imagens/Programação/Java/AluguelFacilCarros/assets/desconhecido.jpg")
                 .getImage().getScaledInstance(250, 250, Image.SCALE_FAST));
         UserIcon.setIcon(image);
 
-        comboBox1.addItem("Modelo");
-        comboBox1.addItem("Fabricante");
-        comboBox1.addItem("Preço do Carro");
+        tabela.Combos(ComboTabela,Tabela);
 
         adicionarCarroButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -159,14 +154,14 @@ public class PanelAlugar extends JFrame {
 
 
 
-                messageAlert("Carro adicionado com sucesso!","Carro adicionado");
+                messageAlert("Usuário adicionado com sucesso!","Usuário adicionado");
             }
         });
 
         // Table
 
 
-        tabela.Tabela(table1);
+        tabela.Tabela(Tabela);
 
         setVisible(true);
     }
@@ -175,11 +170,12 @@ public class PanelAlugar extends JFrame {
 
         ConexaoDB con = new ConexaoDB(); // inicia o OBJ de conexão com o DB
 
-        con.resetarDB();
+//        con.resetarDB();
         con.closeConnection();
 
-        new PanelAlugar("Aluguel Facil Carros",1920,1080);
+        new PanelAlugar("Aluguel Facil Carros",900,900);
 
 
     }
+
 }
