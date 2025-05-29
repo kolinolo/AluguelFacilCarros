@@ -8,7 +8,7 @@ public class Main {
 
             ConexaoDB con = new ConexaoDB();
 
-           con.resetarDB();
+//           con.resetarDB();
     }
 
 }

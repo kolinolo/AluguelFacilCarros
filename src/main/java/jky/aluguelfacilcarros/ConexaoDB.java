@@ -101,17 +101,36 @@ public class ConexaoDB {
 
     }
 
-    public List<String> Select(String modelo){
-        List<String> carModels = new ArrayList<>();
+    public List<String> Select(String modelo,String tabela){
+        List<String> tabelaModels = new ArrayList<>();
         try(Statement stmt = this.connection.createStatement()){
-            var res = stmt.executeQuery(String.format("SELECT %s FROM CARROS",modelo));
+            var res = stmt.executeQuery(String.format("SELECT %s FROM %s",modelo,tabela));
             while (res.next()){
-                carModels.add(res.getString(modelo));
+                tabelaModels.add(res.getString(modelo));
             }
         }catch (SQLException e){
             System.out.println(e.getMessage());;
         }
-        return carModels;
+        return tabelaModels;
+    }
+
+    public List<String> ColumnSelect(String tabela){
+        List<String> tabelas = new ArrayList<>();
+        try(Statement stmt = this.connection.createStatement()){
+            ResultSet Column = stmt.executeQuery(String.format("SELECT * FROM %s LIMIT 1",tabela));
+
+            ResultSetMetaData metaData = Column.getMetaData();
+            int Tamanho = metaData.getColumnCount();
+
+            for (int i = 1; i <= Tamanho; i++) {
+                tabelas.add(metaData.getColumnName(i));
+            }
+
+        }catch (SQLException e){
+            System.out.println(e.getMessage());;
+        }
+
+        return tabelas;
     }
 
 
