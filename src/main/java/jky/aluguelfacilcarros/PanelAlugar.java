@@ -31,19 +31,35 @@ public class PanelAlugar extends JFrame {
     private JTextField dataDaCriaçãoTextField;
     private JTextField preçoDaDiáriaTextField;
     private JButton adicionarCarroButton;
-    // Listar Veiculo
-    private JButton removerButton;
-    private JButton ALUGARButton;
+    private JButton alugarButton;
     private JButton devolverButton;
     private JComboBox ComboTabela;
     private JLabel listVeiculo;
     private JTable Tabela;
+    private JComboBox ID;
+    // Alugar Tela
+    private JPanel AlugarTela;
+    private JComboBox Placa;
+    private JTextField DiasInput;
+
+    public void AlugarClick(){
+        AlugarTela.setVisible(false);
+        alugarButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                AlugarTela.setVisible(true);
+                rotasGetVeiculos.setVisible(false);
+                rotasAddVeiculos.setVisible(false);
+                rotasAddUser.setVisible(false);
+            }
+        });
+    }
 
     // Função dos Botões do Header
     public void Header(JButton LinkHeader){
         rotasGetVeiculos.setVisible(false);
         rotasAddVeiculos.setVisible(true);
         rotasAddUser.setVisible(false);
+        AlugarTela.setVisible(false);
 
         LinkHeader.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -112,6 +128,8 @@ public class PanelAlugar extends JFrame {
         Header(LinkAddVeiculo);
         Header(LinkUserAdd);
 
+        AlugarClick();
+
         // Input Modificar
         Input_Padronizado(placaTextField," Placa:");
         Input_Padronizado(modeloTextField," Modelo:");
@@ -121,6 +139,7 @@ public class PanelAlugar extends JFrame {
         Input_Padronizado(CPFTextField," CPF:");
         Input_Padronizado(nomeTextField," Nome do Usuário: ");
         Input_Padronizado(dataDeNascimentoTextField," Data de Nascimento: ");
+        Input_Padronizado(DiasInput,"Dias a Ser Alugado: ");
 
         // Image do AddUser
         ImageIcon image = new ImageIcon(new ImageIcon("C:/Users/ronal/OneDrive/Imagens/Programação/Java/AluguelFacilCarros/assets/desconhecido.jpg")
