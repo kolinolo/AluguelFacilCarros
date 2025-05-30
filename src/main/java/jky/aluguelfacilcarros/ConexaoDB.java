@@ -12,6 +12,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
+import static jky.aluguelfacilcarros.PanelAlugar.messageAlert;
 
 
 public class ConexaoDB {
@@ -110,17 +111,17 @@ public class ConexaoDB {
 
         Statement stmt = this.connection.createStatement();
 
-        String sql = "SELECT 1 FROM aluguel WHERE carro_placa like '%" + placa + "%' and data_devolucao is null LIMIT 1";
+        String sql = "SELECT 1 FROM carros WHERE placa like '%" + placa + "%' and alugado = 1 LIMIT 1";
         System.out.println(sql);
         ResultSet rs = stmt.executeQuery(sql);
 
         if (rs.next()) {
-            System.out.println("Placa já alugada!");
+            messageAlert("Carro indisponível!","Carro adicionado");
 
 
 
         } else {
-            System.out.println("Placa disponível.");
+
 
             System.out.println(sql);
             sql = "INSERT INTO Aluguel (cliente_id, carro_placa, data_prazo, data_aluguel, data_devolucao) VALUES (" + ID + ",' " + placa + "',date('now', '+" + dias + " days')," + "date('now'), NULL)";
@@ -132,7 +133,7 @@ public class ConexaoDB {
 
             System.out.println(sql);
             stmt.executeUpdate(sql);
-
+            messageAlert("Carro alugado com sucesso!","Carro adicionado");
 
         }
 

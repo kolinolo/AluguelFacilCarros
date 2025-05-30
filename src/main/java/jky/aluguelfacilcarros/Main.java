@@ -9,7 +9,7 @@ public class Main {
 
 
             ConexaoDB con = new ConexaoDB();
-            con.alugaCarro(1,"kolom",4);
+
             con.resetarDB();
     }
 

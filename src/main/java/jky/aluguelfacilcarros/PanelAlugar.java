@@ -196,7 +196,7 @@ public class PanelAlugar extends JFrame {
                     throw new RuntimeException(ex);
                 }
 
-                messageAlert("Carro adicionado com sucesso!","Carro adicionado");
+
             }
         });
 
