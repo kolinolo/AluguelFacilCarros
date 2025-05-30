@@ -36,9 +36,9 @@ public class PanelAlugar extends JFrame {
     private JComboBox ComboTabela;
     private JLabel listVeiculo;
     private JTable Tabela;
-    private JComboBox ID;
     // Alugar Tela
     private JPanel AlugarTela;
+    private JComboBox ID;
     private JComboBox Placa;
     private JTextField DiasInput;
 
@@ -148,6 +148,9 @@ public class PanelAlugar extends JFrame {
 
         tabela.Combos(ComboTabela,Tabela);
 
+        tabela.CreateCombo(ID,"ID","Cliente");
+        tabela.CreateCombo(Placa,"placa","Carros");
+
         adicionarCarroButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 ConexaoDB con = new ConexaoDB();
@@ -181,6 +184,8 @@ public class PanelAlugar extends JFrame {
 
 
         tabela.Tabela(Tabela);
+
+
 
         setVisible(true);
     }

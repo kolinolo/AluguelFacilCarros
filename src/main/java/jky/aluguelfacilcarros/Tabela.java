@@ -46,7 +46,7 @@ public class Tabela {
     }
 
     public void InserirItem(JTable tabela,String ColumnName){
-        ConexaoDB con = new ConexaoDB(); // inicia o OBJ de conexão com o DB
+        ConexaoDB con = new ConexaoDB();
         String[] data = con.ColumnSelect(ColumnName).toArray(new String[0]);
 
         for(int i = 0; i < data.length; i++){
@@ -69,5 +69,14 @@ public class Tabela {
             }
         });
 
+    }
+
+    public void CreateCombo(JComboBox combo,String Column,String Name){
+        ConexaoDB con = new ConexaoDB();
+
+        for(int j = 0; j < con.Select(Column,Name).size(); j++) {
+            combo.addItem(con.Select(Column,Name).get(j));
+            System.out.println(con.Select(Column,Name).get(j));
+        }
     }
 }
