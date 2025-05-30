@@ -38,19 +38,40 @@ public class PanelAlugar extends JFrame {
     private JComboBox ComboTabela;
     private JLabel listVeiculo;
     private JTable Tabela;
-    // Alugar Tela
+    // Alugar e Devolver Tela
     private JPanel AlugarTela;
     private JComboBox ID;
     private JComboBox Placa;
     private JTextField DiasInput;
     private JButton VOLTAR;
     private JButton btnAlugacarro;
+    private JLabel TitleAbrir;
+    private JPanel DevolverTela;
+    private JButton DevolverClick;
+    private JComboBox ID_Devolver;
+    private JComboBox Placa_Devolver;
+    private JButton VoltarDevolver;
 
     public void AlugarClick(){
         AlugarTela.setVisible(false);
         alugarButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 AlugarTela.setVisible(true);
+                DevolverTela.setVisible(false);
+                rotasGetVeiculos.setVisible(false);
+                rotasAddVeiculos.setVisible(false);
+                rotasAddUser.setVisible(false);
+                Header.setVisible(false);
+            }
+        });
+    }
+
+    public void DevolverClick(){
+        DevolverTela.setVisible(false);
+        devolverButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                DevolverTela.setVisible(true);
+                AlugarTela.setVisible(false);
                 rotasGetVeiculos.setVisible(false);
                 rotasAddVeiculos.setVisible(false);
                 rotasAddUser.setVisible(false);
@@ -129,6 +150,7 @@ public class PanelAlugar extends JFrame {
 
 
         AlugarClick();
+        DevolverClick();
         // Headers
         Header(LinkGetVeiculo);
         Header(LinkAddVeiculo);
@@ -202,8 +224,6 @@ public class PanelAlugar extends JFrame {
 
 
 
-
-
         VOLTAR.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 rotasGetVeiculos.setVisible(false);
@@ -211,6 +231,7 @@ public class PanelAlugar extends JFrame {
                 rotasAddUser.setVisible(false);
                 Header.setVisible(true);
                 AlugarTela.setVisible(false);
+                DevolverTela.setVisible(false);
             }
         });
 
