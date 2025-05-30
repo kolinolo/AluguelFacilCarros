@@ -49,7 +49,6 @@ public class PanelAlugar extends JFrame {
     private JPanel DevolverTela;
     private JButton DevolverClick;
     private JComboBox ID_Devolver;
-    private JComboBox Placa_Devolver;
     private JButton VoltarDevolver;
 
     public void AlugarClick(){

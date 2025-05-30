@@ -4,7 +4,6 @@ module jky.aluguelfacilcarros {
     requires java.sql;
     requires java.desktop;
 
-
     opens jky.aluguelfacilcarros to javafx.fxml;
     exports jky.aluguelfacilcarros;
 }
