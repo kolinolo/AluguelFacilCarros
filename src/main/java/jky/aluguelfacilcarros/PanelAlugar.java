@@ -175,6 +175,7 @@ public class PanelAlugar extends JFrame {
 
         tabela.CreateCombo(ID,"ID","Cliente");
         tabela.CreateCombo(Placa,"placa","Carros");
+        tabela.CreateCombo(ID_Devolver,"placa","Carros");
 
         adicionarCarroButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -224,6 +225,18 @@ public class PanelAlugar extends JFrame {
 
 
         VOLTAR.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                rotasGetVeiculos.setVisible(false);
+                rotasAddVeiculos.setVisible(true);
+                rotasAddUser.setVisible(false);
+                Header.setVisible(true);
+                AlugarTela.setVisible(false);
+                DevolverTela.setVisible(false);
+            }
+        });
+
+        VoltarDevolver.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e) {
                 rotasGetVeiculos.setVisible(false);
                 rotasAddVeiculos.setVisible(true);

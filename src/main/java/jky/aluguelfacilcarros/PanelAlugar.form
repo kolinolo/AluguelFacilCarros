@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="jky.aluguelfacilcarros.PanelAlugar">
-  <grid id="27dc6" binding="AlugarForm" layout-manager="GridLayoutManager" row-count="8" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="AlugarForm" layout-manager="GridLayoutManager" row-count="7" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
       <xy x="20" y="20" width="1348" height="2272"/>
@@ -14,11 +14,12 @@
       <grid id="94aef" binding="rotasAddVeiculos" layout-manager="GridLayoutManager" row-count="6" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="20" vgap="50">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-15265508"/>
           <foreground color="-12253896"/>
+          <visible value="false"/>
         </properties>
         <border type="none"/>
         <children>
@@ -155,11 +156,12 @@
       <grid id="41b75" binding="rotasAddUser" layout-manager="GridLayoutManager" row-count="5" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="50">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <autoscrolls value="true"/>
           <background color="-15265508"/>
+          <visible value="false"/>
         </properties>
         <border type="none"/>
         <children>
@@ -178,6 +180,7 @@
               <margin top="2" left="9" bottom="2" right="6"/>
               <text value=""/>
               <toolTipText value=""/>
+              <visible value="true"/>
             </properties>
           </component>
           <component id="d7cc6" class="javax.swing.JTextField" binding="nomeTextField" default-binding="true">
@@ -264,109 +267,16 @@
           </component>
         </children>
       </grid>
-      <grid id="b8306" binding="Header" layout-manager="GridLayoutManager" row-count="2" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="10" vgap="10">
-        <margin top="0" left="0" bottom="0" right="0"/>
-        <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false">
-            <minimum-size width="100" height="100"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-14342875"/>
-          <enabled value="false"/>
-          <focusable value="false"/>
-          <font name="Source Code Pro" size="36" style="1"/>
-        </properties>
-        <border type="none"/>
-        <children>
-          <component id="f2de8" class="javax.swing.JButton" binding="LinkGetVeiculo">
-            <constraints>
-              <grid row="0" column="3" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-14342875"/>
-              <borderPainted value="false"/>
-              <contentAreaFilled value="false"/>
-              <defaultCapable value="true"/>
-              <enabled value="true"/>
-              <focusPainted value="false"/>
-              <font size="18" style="3"/>
-              <foreground color="-1"/>
-              <hideActionText value="false"/>
-              <text value="Lista de Veiculos"/>
-            </properties>
-          </component>
-          <component id="9fbd6" class="javax.swing.JButton" binding="LinkUserAdd">
-            <constraints>
-              <grid row="0" column="2" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-14342875"/>
-              <borderPainted value="false"/>
-              <contentAreaFilled value="false"/>
-              <defaultCapable value="true"/>
-              <enabled value="true"/>
-              <focusPainted value="false"/>
-              <font size="18" style="3"/>
-              <foreground color="-1"/>
-              <hideActionText value="false"/>
-              <margin top="0" left="0" bottom="0" right="0"/>
-              <text value="Adicionar User"/>
-            </properties>
-          </component>
-          <component id="52c0d" class="javax.swing.JButton" binding="LinkAddVeiculo">
-            <constraints>
-              <grid row="0" column="1" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-14342875"/>
-              <borderPainted value="false"/>
-              <contentAreaFilled value="false"/>
-              <defaultCapable value="true"/>
-              <enabled value="true"/>
-              <focusPainted value="false"/>
-              <font size="18" style="3"/>
-              <foreground color="-1"/>
-              <hideActionText value="false"/>
-              <text value="Adicionar Veiculos"/>
-            </properties>
-            <clientProperties>
-              <hideActionText class="java.lang.Boolean" value="false"/>
-            </clientProperties>
-          </component>
-          <hspacer id="fd4b1">
-            <constraints>
-              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-          </hspacer>
-          <component id="26bde" class="javax.swing.JLabel">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="2" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <alignmentX value="1.0"/>
-              <autoscrolls value="false"/>
-              <doubleBuffered value="false"/>
-              <focusCycleRoot value="true"/>
-              <font name="Source Code Pro" size="48" style="3"/>
-              <foreground color="-7859180"/>
-              <opaque value="false"/>
-              <text value="🚗 AlugaFacil"/>
-              <verifyInputWhenFocusTarget value="true"/>
-              <verticalAlignment value="0"/>
-            </properties>
-          </component>
-        </children>
-      </grid>
       <grid id="3ba1b" binding="rotasGetVeiculos" layout-manager="GridLayoutManager" row-count="4" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+          <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="100" height="50"/>
           </grid>
         </constraints>
         <properties>
           <background color="-15265508"/>
+          <visible value="true"/>
         </properties>
         <border type="none" title-justification="2" title-position="2">
           <font/>
@@ -482,30 +392,30 @@
       </grid>
       <vspacer id="8c212">
         <constraints>
-          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <grid row="6" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
         </constraints>
       </vspacer>
       <vspacer id="b034b">
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
         </constraints>
       </vspacer>
-      <grid id="82fe4" binding="AlugarTela" layout-manager="GridLayoutManager" row-count="9" column-count="10" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="82fe4" binding="AlugarTela" layout-manager="GridLayoutManager" row-count="9" column-count="14" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+          <grid row="4" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="500" height="-1"/>
           </grid>
         </constraints>
         <properties>
           <background color="-15265508"/>
-          <visible value="true"/>
+          <visible value="false"/>
         </properties>
         <border type="none"/>
         <children>
           <component id="abb44" class="javax.swing.JTextField" binding="DiasInput">
             <constraints>
-              <grid row="6" column="0" row-span="1" col-span="10" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+              <grid row="6" column="0" row-span="1" col-span="14" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
                 <preferred-size width="555" height="35"/>
               </grid>
             </constraints>
@@ -524,19 +434,21 @@
           </component>
           <component id="d08f6" class="javax.swing.JButton" binding="btnAlugacarro">
             <constraints>
-              <grid row="8" column="0" row-span="1" col-span="10" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+              <grid row="8" column="0" row-span="1" col-span="14" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
                 <preferred-size width="100" height="50"/>
               </grid>
             </constraints>
             <properties>
               <background color="-16053218"/>
+              <font name="Courier New" size="12" style="1"/>
               <foreground color="-394241"/>
+              <margin top="5" left="8" bottom="5" right="8"/>
               <text value="Alugar"/>
             </properties>
           </component>
           <component id="a4240" class="javax.swing.JLabel" binding="TitleAbrir">
             <constraints>
-              <grid row="1" column="0" row-span="1" col-span="10" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="1" column="0" row-span="1" col-span="14" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <focusable value="true"/>
@@ -547,8 +459,8 @@
           </component>
           <component id="8dcaa" class="javax.swing.JButton" binding="VOLTAR">
             <constraints>
-              <grid row="0" column="0" row-span="1" col-span="7" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
-                <preferred-size width="200" height="50"/>
+              <grid row="0" column="0" row-span="1" col-span="11" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="100" height="25"/>
               </grid>
             </constraints>
             <properties>
@@ -563,29 +475,30 @@
               <focusPainted value="true"/>
               <focusTraversalPolicyProvider value="false"/>
               <foreground color="-15725531"/>
+              <horizontalAlignment value="2"/>
               <inheritsPopupMenu value="false"/>
               <opaque value="true"/>
               <requestFocusEnabled value="true"/>
               <rolloverEnabled value="true"/>
               <selected value="false"/>
-              <text value="Voltar"/>
+              <text value="⬅️ Voltar"/>
               <verifyInputWhenFocusTarget value="true"/>
               <visible value="true"/>
             </properties>
           </component>
           <vspacer id="b17f9">
             <constraints>
-              <grid row="5" column="0" row-span="1" col-span="7" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+              <grid row="5" column="0" row-span="1" col-span="11" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
             </constraints>
           </vspacer>
           <vspacer id="89faa">
             <constraints>
-              <grid row="3" column="0" row-span="1" col-span="7" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+              <grid row="3" column="0" row-span="1" col-span="11" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
             </constraints>
           </vspacer>
           <vspacer id="a2e2c">
             <constraints>
-              <grid row="7" column="0" row-span="1" col-span="7" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+              <grid row="7" column="0" row-span="1" col-span="11" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
             </constraints>
           </vspacer>
           <component id="de6cf" class="javax.swing.JLabel">
@@ -608,9 +521,9 @@
               <text value="Placa:"/>
             </properties>
           </component>
-          <component id="e13b8" class="javax.swing.JComboBox" binding="ID">
+          <component id="b13ca" class="javax.swing.JComboBox" binding="Placa">
             <constraints>
-              <grid row="2" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false">
+              <grid row="4" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false">
                 <preferred-size width="300" height="-1"/>
               </grid>
             </constraints>
@@ -623,9 +536,9 @@
               <inheritsPopupMenu value="true"/>
             </properties>
           </component>
-          <component id="54514" class="javax.swing.JComboBox" binding="Placa">
+          <component id="650e7" class="javax.swing.JComboBox" binding="ID">
             <constraints>
-              <grid row="4" column="1" row-span="1" col-span="9" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false">
+              <grid row="2" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false">
                 <preferred-size width="300" height="-1"/>
               </grid>
             </constraints>
@@ -643,19 +556,19 @@
       <grid id="50929" binding="DevolverTela" layout-manager="GridLayoutManager" row-count="5" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+          <grid row="5" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="500" height="-1"/>
           </grid>
         </constraints>
         <properties>
           <background color="-15265508"/>
-          <visible value="true"/>
+          <visible value="false"/>
         </properties>
         <border type="none"/>
         <children>
           <component id="b1e2c" class="javax.swing.JComboBox" binding="ID_Devolver">
             <constraints>
-              <grid row="2" column="1" row-span="1" col-span="4" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false">
+              <grid row="2" column="1" row-span="1" col-span="4" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="2" use-parent-layout="false">
                 <preferred-size width="300" height="-1"/>
               </grid>
             </constraints>
@@ -671,12 +584,14 @@
           <component id="6e992" class="javax.swing.JButton" binding="DevolverClick">
             <constraints>
               <grid row="4" column="0" row-span="1" col-span="5" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
-                <preferred-size width="100" height="50"/>
+                <preferred-size width="125" height="50"/>
               </grid>
             </constraints>
             <properties>
               <background color="-16053218"/>
+              <font name="Courier New" size="12" style="1"/>
               <foreground color="-394241"/>
+              <margin top="5" left="5" bottom="5" right="5"/>
               <text value="Devolver"/>
             </properties>
           </component>
@@ -694,13 +609,13 @@
           <component id="4e99d" class="javax.swing.JButton" binding="VoltarDevolver">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
-                <preferred-size width="200" height="50"/>
+                <preferred-size width="100" height="25"/>
               </grid>
             </constraints>
             <properties>
-              <actionCommand value="VOLTAR"/>
-              <background color="-1446918"/>
-              <borderPainted value="false"/>
+              <actionCommand value="VoltarDevolver"/>
+              <background color="-1117953"/>
+              <borderPainted value="true"/>
               <contentAreaFilled value="true"/>
               <defaultCapable value="true"/>
               <doubleBuffered value="false"/>
@@ -709,13 +624,17 @@
               <focusPainted value="true"/>
               <focusTraversalPolicyProvider value="false"/>
               <foreground color="-15725531"/>
+              <horizontalAlignment value="2"/>
+              <horizontalTextPosition value="0"/>
               <inheritsPopupMenu value="false"/>
               <opaque value="true"/>
               <requestFocusEnabled value="true"/>
               <rolloverEnabled value="true"/>
               <selected value="false"/>
-              <text value="Voltar"/>
+              <text value="⬅️ Voltar"/>
               <verifyInputWhenFocusTarget value="true"/>
+              <verticalAlignment value="0"/>
+              <verticalTextPosition value="0"/>
               <visible value="true"/>
             </properties>
           </component>
@@ -724,12 +643,108 @@
               <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
             </constraints>
           </vspacer>
-          <component id="bd4e6" class="javax.swing.JLabel">
+          <component id="a7441" class="javax.swing.JLabel">
             <constraints>
-              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="2" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="placa do Carro"/>
+              <font name="Consolas" size="14" style="1"/>
+              <foreground color="-394241"/>
+              <text value="Placa do Carro:"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="b8306" binding="Header" layout-manager="GridLayoutManager" row-count="2" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="10" vgap="10">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false">
+            <minimum-size width="100" height="100"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-14342875"/>
+          <enabled value="false"/>
+          <focusable value="false"/>
+          <font name="Source Code Pro" size="36" style="1"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="f2de8" class="javax.swing.JButton" binding="LinkGetVeiculo">
+            <constraints>
+              <grid row="0" column="3" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14342875"/>
+              <borderPainted value="false"/>
+              <contentAreaFilled value="false"/>
+              <defaultCapable value="true"/>
+              <enabled value="true"/>
+              <focusPainted value="false"/>
+              <font size="18" style="3"/>
+              <foreground color="-1"/>
+              <hideActionText value="false"/>
+              <text value="Lista de Veiculos"/>
+            </properties>
+          </component>
+          <component id="9fbd6" class="javax.swing.JButton" binding="LinkUserAdd">
+            <constraints>
+              <grid row="0" column="2" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14342875"/>
+              <borderPainted value="false"/>
+              <contentAreaFilled value="false"/>
+              <defaultCapable value="true"/>
+              <enabled value="true"/>
+              <focusPainted value="false"/>
+              <font size="18" style="3"/>
+              <foreground color="-1"/>
+              <hideActionText value="false"/>
+              <margin top="0" left="0" bottom="0" right="0"/>
+              <text value="Adicionar User"/>
+            </properties>
+          </component>
+          <component id="52c0d" class="javax.swing.JButton" binding="LinkAddVeiculo">
+            <constraints>
+              <grid row="0" column="1" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14342875"/>
+              <borderPainted value="false"/>
+              <contentAreaFilled value="false"/>
+              <defaultCapable value="true"/>
+              <enabled value="true"/>
+              <focusPainted value="false"/>
+              <font size="18" style="3"/>
+              <foreground color="-1"/>
+              <hideActionText value="false"/>
+              <text value="Adicionar Veiculos"/>
+            </properties>
+            <clientProperties>
+              <hideActionText class="java.lang.Boolean" value="false"/>
+            </clientProperties>
+          </component>
+          <hspacer id="fd4b1">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </hspacer>
+          <component id="26bde" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="2" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <alignmentX value="1.0"/>
+              <autoscrolls value="false"/>
+              <doubleBuffered value="false"/>
+              <focusCycleRoot value="true"/>
+              <font name="Source Code Pro" size="48" style="3"/>
+              <foreground color="-7859180"/>
+              <opaque value="false"/>
+              <text value="🚗 AlugaFacil"/>
+              <verifyInputWhenFocusTarget value="true"/>
+              <verticalAlignment value="0"/>
             </properties>
           </component>
         </children>
