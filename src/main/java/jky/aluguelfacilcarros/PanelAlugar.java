@@ -6,6 +6,8 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.*;
 import java.sql.SQLException;
+import java.util.Arrays;
+import java.util.Objects;
 
 
 public class PanelAlugar extends JFrame {
@@ -42,6 +44,7 @@ public class PanelAlugar extends JFrame {
     private JComboBox Placa;
     private JTextField DiasInput;
     private JButton VOLTAR;
+    private JButton btnAlugacarro;
 
     public void AlugarClick(){
         AlugarTela.setVisible(false);
@@ -170,6 +173,36 @@ public class PanelAlugar extends JFrame {
                 messageAlert("Carro adicionado com sucesso!","Carro adicionado");
             }
         });
+
+
+        btnAlugacarro.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                ConexaoDB con = new ConexaoDB();
+
+
+                int idPessoa = Integer.parseInt((String) Objects.requireNonNull(ID.getSelectedItem()));
+
+                System.out.println(ID.getSelectedItem());
+                System.out.println((String) Placa.getSelectedItem());
+                System.out.println(Integer.parseInt(DiasInput.getText()));
+
+                try {
+                    con.alugaCarro(idPessoa,
+                            (String) Placa.getSelectedItem(),
+                            Integer.parseInt(DiasInput.getText()));
+
+                } catch (SQLException ex) {
+
+                    throw new RuntimeException(ex);
+                }
+
+                messageAlert("Carro adicionado com sucesso!","Carro adicionado");
+            }
+        });
+
+
+
+
 
         VOLTAR.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
