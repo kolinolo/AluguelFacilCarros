@@ -92,7 +92,7 @@ public class ConexaoDB {
         try(Statement stmt = this.connection.createStatement()){
 
 
-            String sql = "INSERT INTO CARROS VALUES ('" + placa + "', '" + modelo + "', " + anoFabricacao + ", '" + cor + "', " + preco + ")";
+            String sql = "INSERT INTO CARROS VALUES ('" + placa + "', '" + modelo + "', " + anoFabricacao + ", '" + cor + "', " + preco + ",0)";
             stmt.executeUpdate(sql);
 
         }catch (SQLException e){
@@ -110,7 +110,7 @@ public class ConexaoDB {
 
         Statement stmt = this.connection.createStatement();
 
-        String sql = "SELECT 1 FROM aluguel WHERE carro_placa = '" + placa + "' and data_devolucao is null LIMIT 1";
+        String sql = "SELECT 1 FROM aluguel WHERE carro_placa like '%" + placa + "%' and data_devolucao is null LIMIT 1";
         System.out.println(sql);
         ResultSet rs = stmt.executeQuery(sql);
 
@@ -123,10 +123,14 @@ public class ConexaoDB {
             System.out.println("Placa disponível.");
 
             System.out.println(sql);
-            sql = "INSERT INTO Aluguel (cliente_id, carro_placa, data_prazo, data_aluguel, data_devolucao) VALUES (" + ID + ",' " + placa + "',date('now', '" + dias + "days')," + "date('now'), NULL)";
-
+            sql = "INSERT INTO Aluguel (cliente_id, carro_placa, data_prazo, data_aluguel, data_devolucao) VALUES (" + ID + ",' " + placa + "',date('now', '+" + dias + " days')," + "date('now'), NULL)";
+            stmt.executeUpdate(sql);
             System.out.println(sql);
 
+
+            sql = "update Carros set alugado = 1 where placa = '" + placa + "'";
+
+            System.out.println(sql);
             stmt.executeUpdate(sql);
 
 
@@ -143,7 +147,7 @@ public class ConexaoDB {
 
         Statement stmt = this.connection.createStatement();
 
-        String sql = "update Aluguel set data_devolucao = date('now') where" + placa + "= 'lol';";
+        String sql = "update Aluguel set data_devolucao = date('now') where placa = ' " + placa + "'";
         System.out.println(sql);
         stmt.executeQuery(sql);
 
@@ -230,7 +234,8 @@ public class ConexaoDB {
                         "modelo TEXT, " +
                         "fabricacao integer, " +
                         "cor_carro TEXT," +
-                        "precoDIaria REAL)"
+                        "precoDIaria REAL," +
+                        "alugado integer)"
 
             );
 
