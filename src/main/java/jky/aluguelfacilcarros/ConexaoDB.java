@@ -13,6 +13,8 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
 import static jky.aluguelfacilcarros.PanelAlugar.messageAlert;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 
 public class ConexaoDB {
@@ -144,16 +146,25 @@ public class ConexaoDB {
 
     }
 
-    public boolean devolverCarro(String placa) throws SQLException {
+    public void devolverCarro(String placa) throws SQLException {
 
         Statement stmt = this.connection.createStatement();
 
-        String sql = "update Aluguel set data_devolucao = date('now') where placa = ' " + placa + "'";
+        //ChronoUnit.DAYS.between(data1, data2)
+        int dias = 4;
+        float preco = 2.1F;
+        String sql = "update Aluguel set data_devolucao = date('now') where carro_placa like '%" + placa + "%'";
         System.out.println(sql);
-        stmt.executeQuery(sql);
+        stmt.executeUpdate(sql);
+        sql= "select Carros.precoDIaria from Carros where placa like '%" + placa+ "%';";
+        ResultSet rs = stmt.executeQuery(sql);
+        while (rs.next()) {
 
+            preco =rs.getFloat("precoDIaria");
+        }
 
-    return true;
+        messageAlert("Carro devolvido pelo preço de R$" + (dias * preco),"Carro devolvido");
+
     };
 
 

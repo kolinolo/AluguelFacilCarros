@@ -10,7 +10,7 @@ public class Main {
 
             ConexaoDB con = new ConexaoDB();
 
-            con.resetarDB();
+            con.devolverCarro("cli");
     }
 
 }
