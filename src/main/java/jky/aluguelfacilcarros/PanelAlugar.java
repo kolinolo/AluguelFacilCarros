@@ -267,6 +267,20 @@ public class PanelAlugar extends JFrame {
             }
         });
 
+
+        DevolverClick.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                ConexaoDB con = new ConexaoDB();
+                try {
+                    con.devolverCarro((String) ID_Devolver.getSelectedItem());
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+
+            }
+        });
+
+
         // Table
 
 
