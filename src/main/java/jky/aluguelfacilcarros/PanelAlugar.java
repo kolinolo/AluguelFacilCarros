@@ -41,6 +41,7 @@ public class PanelAlugar extends JFrame {
     private JComboBox ID;
     private JComboBox Placa;
     private JTextField DiasInput;
+    private JButton VOLTAR;
 
     public void AlugarClick(){
         AlugarTela.setVisible(false);
@@ -50,6 +51,7 @@ public class PanelAlugar extends JFrame {
                 rotasGetVeiculos.setVisible(false);
                 rotasAddVeiculos.setVisible(false);
                 rotasAddUser.setVisible(false);
+                Header.setVisible(false);
             }
         });
     }
@@ -59,7 +61,6 @@ public class PanelAlugar extends JFrame {
         rotasGetVeiculos.setVisible(false);
         rotasAddVeiculos.setVisible(true);
         rotasAddUser.setVisible(false);
-        AlugarTela.setVisible(false);
 
         LinkHeader.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -123,12 +124,12 @@ public class PanelAlugar extends JFrame {
         setLocationRelativeTo(null);
         setAlwaysOnTop(true);
 
+
+        AlugarClick();
         // Headers
         Header(LinkGetVeiculo);
         Header(LinkAddVeiculo);
         Header(LinkUserAdd);
-
-        AlugarClick();
 
         // Input Modificar
         Input_Padronizado(placaTextField," Placa:");
@@ -142,7 +143,7 @@ public class PanelAlugar extends JFrame {
         Input_Padronizado(DiasInput,"Dias a Ser Alugado: ");
 
         // Image do AddUser
-        ImageIcon image = new ImageIcon(new ImageIcon("C:/Users/ronal/OneDrive/Imagens/Programação/Java/AluguelFacilCarros/assets/desconhecido.jpg")
+        ImageIcon image = new ImageIcon(new ImageIcon("assets/desconhecido.jpg")
                 .getImage().getScaledInstance(250, 250, Image.SCALE_FAST));
         UserIcon.setIcon(image);
 
@@ -160,17 +161,37 @@ public class PanelAlugar extends JFrame {
                         corDeCarroTextField.getText(),
                         Float.valueOf(preçoDaDiáriaTextField.getText()));
 
+                placaTextField.setText(" Placa:");
+                modeloTextField.setText(" Modelo:");
+                corDeCarroTextField.setText(" Cor:");
+                dataDaCriaçãoTextField.setText(" Ano do carro:");
+                preçoDaDiáriaTextField.setText(" Preço da Diária do Carro:");
+
                 messageAlert("Carro adicionado com sucesso!","Carro adicionado");
             }
         });
 
+        VOLTAR.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                rotasGetVeiculos.setVisible(false);
+                rotasAddVeiculos.setVisible(true);
+                rotasAddUser.setVisible(false);
+                Header.setVisible(true);
+                AlugarTela.setVisible(false);
+            }
+        });
 
         adicionarUsuárioButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 ConexaoDB con = new ConexaoDB();
                 try {
                     con.addPessoa(nomeTextField.getText(),CPFTextField.getText(),dataDeNascimentoTextField.getText());
+                    CPFTextField.setText(" CPF:");
+                    nomeTextField.setText(" Nome do Usuário:");
+                    dataDeNascimentoTextField.setText(" Data de Nascimento:");
+                    DiasInput.setText("Dias a Ser Alugado:");
                 } catch (SQLException ex) {
+                    messageAlert(String.valueOf(ex),"ERRO");
                     throw new RuntimeException(ex);
                 }
 
