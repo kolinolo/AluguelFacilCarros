@@ -298,7 +298,7 @@ public class PanelAlugar extends JFrame {
 //        con.resetarDB();
         con.closeConnection();
 
-        new PanelAlugar("Aluguel Facil Carros",900,900);
+        new PanelAlugar("Aluguel Facil Carros",1200,720);
 
 
     }

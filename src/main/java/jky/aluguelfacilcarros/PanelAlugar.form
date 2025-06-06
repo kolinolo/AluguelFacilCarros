@@ -19,7 +19,7 @@
         <properties>
           <background color="-15265508"/>
           <foreground color="-12253896"/>
-          <visible value="false"/>
+          <visible value="true"/>
         </properties>
         <border type="none"/>
         <children>
@@ -161,7 +161,7 @@
         <properties>
           <autoscrolls value="true"/>
           <background color="-15265508"/>
-          <visible value="false"/>
+          <visible value="true"/>
         </properties>
         <border type="none"/>
         <children>
@@ -409,7 +409,7 @@
         </constraints>
         <properties>
           <background color="-15265508"/>
-          <visible value="false"/>
+          <visible value="true"/>
         </properties>
         <border type="none"/>
         <children>
@@ -562,7 +562,7 @@
         </constraints>
         <properties>
           <background color="-15265508"/>
-          <visible value="false"/>
+          <visible value="true"/>
         </properties>
         <border type="none"/>
         <children>
